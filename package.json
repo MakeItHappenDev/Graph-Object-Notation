@@ -1,0 +1,27 @@
+{
+  "name": "graph-object-notation",
+  "version": "0.1.0",
+  "description": "Graph parser/serializer superset of JSON",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MakeItHappenDev/Graph-Object-Notation.git"
+  },
+  "keywords": [
+    "graph",
+    "JSON",
+    "parse",
+    "serialize",
+    "stringify",
+    "GON"
+  ],
+  "author": "Arthur Juchereau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MakeItHappenDev/Graph-Object-Notation/issues"
+  },
+  "homepage": "https://github.com/MakeItHappenDev/Graph-Object-Notation#readme"
+}
