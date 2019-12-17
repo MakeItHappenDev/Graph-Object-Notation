@@ -1,5 +1,5 @@
 import setup from './setup'
-import createReferences from '../lib/createReferences'
+import createReferences from './createReferences'
 import Reference from './reference'
 
 const indentSpaces = (space = 0) => {

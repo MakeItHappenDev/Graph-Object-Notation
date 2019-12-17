@@ -54,8 +54,11 @@ Parse __stringToBeParsed__ in the GON format, resolve references and provide a J
 # GON.stringify(objectToSerialize, replacer, spaces, target)
 
 Serialize __objectToSerialize__ to the GON format. default is `{}`
+
 __replacer__ is not yet implemented and will work like the __replacer__ from JSON.stringify. default is `null` 
+
 __space__ is used to make the serialized string more readable for human, works like __space__ from JSON.stringify, default is `0`
+
 __target__ specify the property that will hold the references, default is `"references"`
 
 
