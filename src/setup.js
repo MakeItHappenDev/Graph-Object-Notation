@@ -17,9 +17,11 @@ const setup = (options) => {
 
 
   //Create functionnal generator
-  const generator = function* (start = 61440){
-    for(let i = start;i<Infinity;i++){
-      yield `0x${i.toString(16)}`
+  const generator = (start = 61440) => {
+    let i = start
+    return () => {
+      i++;
+      return `0x${i.toString(16)}`
     }
   }
   const generate = generator(61440)
@@ -54,7 +56,7 @@ const setup = (options) => {
           else{
             //Ensure uniqueness 
             //maybe this should be in the generator function
-            do{ address = generate.next().value }
+            do{ address = generate() }
             while(refs[address] !== undefined)
           }
           //build the refs
