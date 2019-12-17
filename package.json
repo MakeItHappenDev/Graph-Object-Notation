@@ -1,6 +1,6 @@
 {
   "name": "graph-object-notation",
-  "version": "0.1.0",
+  "version": "0.1.0-0",
   "description": "Graph parser/serializer superset of JSON",
   "main": "index.js",
   "scripts": {
