@@ -2,9 +2,13 @@
   "name": "graph-object-notation",
   "version": "0.1.2",
   "description": "Graph parser/serializer superset of JSON",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "prepublish": "babel src --out-dir lib"
+  },
+  "babel": {
+    "presets": ["es2015"]
   },
   "repository": {
     "type": "git",
@@ -23,5 +27,10 @@
   "bugs": {
     "url": "https://github.com/MakeItHappenDev/Graph-Object-Notation/issues"
   },
-  "homepage": "https://github.com/MakeItHappenDev/Graph-Object-Notation#readme"
+  "homepage": "https://github.com/MakeItHappenDev/Graph-Object-Notation#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1"
+  }
 }
