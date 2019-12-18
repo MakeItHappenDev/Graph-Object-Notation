@@ -55,6 +55,8 @@ Parse __stringToBeParsed__ in the GON format, resolve references and provide a J
 
 /!\ Stringify mutate the __objectToSerialize__ , this is a know bug and will be resolved later on
 
+/!\ Stringify return a serialized version of your string on the form {"data":{...yourObject/array}, __target__:{...}}, if you want to stringify and parse in succession, you'll need to `GON.parse(GON.stringify({test:"hello"}).data` to get the expected result
+
 Serialize __objectToSerialize__ to the GON format. default is `{}`
 
 __replacer__ is not yet implemented and will work like the __replacer__ from JSON.stringify. default is `null` 
