@@ -53,6 +53,8 @@ Parse __stringToBeParsed__ in the GON format, resolve references and provide a J
 
 # GON.stringify(objectToSerialize, replacer, spaces, target)
 
+/!\ Stringify mutate the __objectToSerialize__ , this is a know bug and will be resolved later on
+
 Serialize __objectToSerialize__ to the GON format. default is `{}`
 
 __replacer__ is not yet implemented and will work like the __replacer__ from JSON.stringify. default is `null` 
@@ -67,6 +69,7 @@ __target__ specify the property that will hold the references, default is `"refe
 The goal is to provide a serialization for useful JS types of object/primitive, and graph supports.
 Next versions will focus on :
 
+ - Making stringify immutable
  - Adding tests for automatic deployements
  - Improved resiliency of the parse/stringify functions
  - Better optimization of the parse/stringify functions
