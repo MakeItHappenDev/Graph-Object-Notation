@@ -45,7 +45,7 @@ In addition to JSON, GON offers a few more serialization options:
 
 # Import options
 
-You can import the whole suite with `import GON from 'graph-object-notation`` or just the part you need with `import {parse,stringify} from 'graph-object-notation'`
+You can import the whole suite with `import GON from 'graph-object-notation` or just the part you need with `import {parse,stringify} from 'graph-object-notation'`
 
 # GON.parse(stringToBeParsed)
 
