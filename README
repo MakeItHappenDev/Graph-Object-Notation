@@ -25,7 +25,7 @@ console.log(JSON.stringify(graph))
 // Returns {"foo":{"name":"bar"},"ref":{"name":"bar"}}
 
 console.log(GON.stringify(graph))
-// Returns {"data":{"foo":@references.0xf000@,"ref":@references.0xf000@},"references":{"0xf000":{"name":"bar"}}}
+// Returns {"data":{"foo":@references.0xf001@,"ref":@references.0xf001@},"references":{"0xf001":{"name":"bar"}}}
 
 ```
 
