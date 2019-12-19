@@ -282,8 +282,11 @@ function parse(str) {
       }
     }
     if(str[i] === "n"){
-      i++
-      return BigInt(str.slice(start, i-1))
+      //Prevent empty big int to grab value from keyword null
+      if(start != i){
+        i++
+        return BigInt(str.slice(start, i-1))
+      }
     }
     if (i > start) {
       return Number(str.slice(start, i));
