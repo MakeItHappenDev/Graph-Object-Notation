@@ -1,36 +1,54 @@
 import Reference from './reference'
 
-//Recusive call of findRef over our object
-const reference = (object, findRef) => {
-  let deeperRef = []
-
-  // TODO Make everything immutable
-
+const immutableMe = object => {
   let immutableObject
   if (object instanceof Array) {
     immutableObject = [...object]
-    for (let i = 0; i < immutableObject.length; i++) {
+  }
+  else if(object instanceof Object && object !== null){
+    immutableObject = {...object}
+  }
+  return immutableObject || object
+}
+
+
+//Recusive call of findRef over our object, 
+const reference = (base, findRef,nested=false) => {
+  let deeperRef = []
+
+  // TODO Make everything immutable, if nested, do not call immutableMe(taken care in the parent array/object recursion)
+  let object
+  if(nested === true){
+    object = base
+  }
+  else{
+    object = immutableMe(base)
+  }
+
+  if (object instanceof Array) {
+    for (let i = 0; i < object.length; i++) {
       //Don't go recursive for primitives
-      if (typeof obimmutableObjectject[i] === "object" && immutableObject[i] !== null && !(immutableObject[i] instanceof Reference) && !(immutableObject[i] instanceof Date)) {
+      if (typeof object[i] === "object" && object[i] !== null && !(object[i] instanceof Reference) && !(object[i] instanceof Date)) {
         //Go deeper
-        deeperRef.push(immutableObject[i])
-        immutableObject[i] = findRef(immutableObject[i])
+        object[i] = immutableMe(object[i])
+        deeperRef.push(object[i])
+        object[i] = findRef(object[i])
       }
     }
   } else if (object instanceof Object) {
-    immutableObject = {...object}
-    Object.keys(immutableObject).forEach(function(key) {
-      if (immutableObject[key] && typeof immutableObject[key] === "object" && !(immutableObject[key] instanceof Reference) && !(immutableObject[key] instanceof Date)) {
+    Object.keys(object).forEach(function(key) {
+      if (object[key] && typeof object[key] === "object" && !(object[key] instanceof Reference) && !(object[key] instanceof Date)) {
         //Go deeper
-        deeperRef.push(immutableObject[key])
-        immutableObject[key] = findRef(immutableObject[key])
+        object[key] = immutableMe(object[key])
+        deeperRef.push(object[key])
+        object[key] = findRef(object[key])
       }
     });
   }
   for(let i=0;i<deeperRef.length;i++){
-    reference(deeperRef[i],findRef)
+    reference(deeperRef[i],findRef,true)
   }
-  return immutableObject;
+  return object;
 };
 
 export default reference
