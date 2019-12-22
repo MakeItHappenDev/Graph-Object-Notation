@@ -71,7 +71,7 @@ __target__ specify the property that will hold the references, default is `"refe
 The goal is to provide a serialization for useful JS types of object/primitive, and graph supports.
 Next versions will focus on :
 
- - Making stringify immutable
+ - ~Making stringify immutable~
  - Adding tests for automatic deployements
  - Improved resiliency of the parse/stringify functions
  - Better optimization of the parse/stringify functions
