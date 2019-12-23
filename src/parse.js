@@ -37,8 +37,8 @@ const reReference = (object, bank = object) => {
       }
     });
   } else {
-    console.log("I'm in a primitive", object);
-    //Should never be the case
+    //console.log("I'm in a primitive", object);
+    //Should never be the case, except for null values
   }
   return object;
 };
